@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h2>User Defined Filter</h2>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <select name="user_data" id="user_data" multiple>
+                {% for i in user_obj %}
+                <option value="{{ i.cust_code }}">{{ i.cust_name }}</option>
+                {% endfor %}
+            </select><br><br>
+            <input type="submit" value="submit">
+        </form>
+    
+    </center>
+</body>
+</html>
